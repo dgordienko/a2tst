@@ -20,6 +20,18 @@ export class MapComponent implements OnInit, AfterViewInit {
     }).catch(expect => console.log(expect));
   }
   ngAfterViewInit() {
+    this.initMapControl();
+
+    const style = {
+      'color': '#ff7800',
+      'weight': 5,
+      'opacity': 0.65
+    };
+    L.geoJSON(this.loadeddata, style).addTo(this.leafletMap);
+
+  }
+
+  initMapControl() {
     this.leafletMap = L.map('map');
     const osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
     const osmAttrib = 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';

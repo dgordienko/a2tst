@@ -1,0 +1,16 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{89715AD1-46D3-4B3B-A707-6528B980BDD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HermesAPI", "src\HermesAPI\HermesAPI.csproj", "{132185DA-5F6E-4BDE-BF8E-DDC01C769BB1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{132185DA-5F6E-4BDE-BF8E-DDC01C769BB1} = {89715AD1-46D3-4B3B-A707-6528B980BDD9}
+	EndGlobalSection
+EndGlobal

@@ -3,12 +3,11 @@ import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import * as L from 'leaflet';
-
 @Injectable()
-export class TracksService {
+export class PointsService {
 
   constructor(private http: Http) { }
-  getTrackData() {
+  getPointsData() {
     const u = './assets/route.geojson';
     return Promise.resolve((this.http.get(u)
       .map((response: Response) => {
@@ -22,5 +21,4 @@ export class TracksService {
         return points;
       })).toPromise());
   };
-  // tslint:disable-next-line:eofline
 }

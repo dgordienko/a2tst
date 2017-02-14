@@ -1,4 +1,8 @@
-
+#container {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+}
 #mapcontrol{
     min-width: 640 px;
     min-height: 480 px;

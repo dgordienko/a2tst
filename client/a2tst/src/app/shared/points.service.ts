@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
+
+
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
-import '../shared/linq';
+
 import { IDeliverypoint } from '../interfaces/ideliverypoint';
 @Injectable()
 export class PointsService {
@@ -12,7 +14,7 @@ export class PointsService {
     return Promise.resolve((this.http.get(u)
       .map((response: Response) => {
         const loadeddata: GeoJSON.FeatureCollection<any> = response.json();
-        const result = [];
+        const res = [];
         loadeddata.features.forEach(x => {
           const code = {
             id: x.properties['id'],
@@ -20,8 +22,12 @@ export class PointsService {
             employee: x.properties['kontragenty'],
             position: (x.geometry as GeoJSON.Point).coordinates
           };
-          result.push(code);
+          res.push(code);
         });
+        const result = {
+          points: res,
+          features: loadeddata
+        };
         return result;
       })).toPromise());
   };

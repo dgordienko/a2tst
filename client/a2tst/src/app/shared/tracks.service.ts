@@ -16,5 +16,4 @@ export class TracksService {
         return loadeddata;
       })).toPromise());
   }
-// tslint:disable-next-line:eofline
 }

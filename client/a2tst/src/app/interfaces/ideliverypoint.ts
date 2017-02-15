@@ -1,6 +1,4 @@
-
 export interface IDeliverypoint {
-    code: any;
-    employee: any;
-    position: GeoJSON.Position;
+    points: any[];
+    features: GeoJSONFeatureCollection<any>;
 }

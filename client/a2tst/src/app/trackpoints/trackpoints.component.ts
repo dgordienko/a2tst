@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { PointsService } from '../shared/points.service';
 
+import * as turf from '@turf/turf';
+import { PointsService } from '../shared/points.service';
+import { SharedService } from '../shared/shared.service';
 
 @Component({
   selector: 'app-trackpoints',
@@ -14,13 +16,21 @@ export class TrackpointsComponent implements OnInit {
     { prop: 'id' },
     { name: 'position' }
   ];
-  constructor(private srv: PointsService) {
+  constructor(
+    private srv: PointsService,
+    private shared: SharedService) {
+
+    this.shared.point$.subscribe(point => {
+      console.log('points list - received from points: ' + point);
+    });
     this.srv.getPointsData().then(data => {
-      this.tablerows = data;
+      this.tablerows = data.points;
+
     })
       .catch(ex => console.error(ex));
   }
   ngOnInit() {
 
   }
+  // tslint:disable-next-line:eofline
 }

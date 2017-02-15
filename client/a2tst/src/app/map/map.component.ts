@@ -33,36 +33,32 @@ export class MapComponent implements OnInit, AfterViewInit {
 
     this.nativeElement = this.element.nativeElement;
     this.srv.getTrackData().then(data => {
-      const style = {
-        'color': 'red',
-        'weight': 5,
-        'opacity': 0.65
-      };
       const coordinates = (data.features.AsLinq()
         .FirstOrDefault() as GeoJSONFeature<GeoJSONLineString>)
-        .geometry.coordinates[10];
+        .geometry.coordinates[0];
       const posView = new L.LatLng(coordinates[1], coordinates[0]);
       console.log(posView);
 
       this.leafletMap.setView(posView, 10);
       const glayer = L.geoJSON();
       glayer.addData(data).addTo(this.leafletMap);
+          // jquery way dom manipulate
+      const t = $('#lg').prop('href');
+      console.log(t);
 
-    }).catch(expect => console.log(expect));
+    }).catch(expect => console.exception(expect));
   }
 
   ngAfterViewInit() {
     this.leafletMap = L.map('map');
     const osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
     // tslint:disable-next-line:max-line-length
-    const osmAttrib = 'Map data © <a id="logo" href="http://openstreetmap.org">OpenStreetMap</a> contributors <a id="foo" href="https://github.com/dgordienko/a2tst.source">github</a>';
-    const osm = new L.TileLayer(osmUrl, { minZoom: 8, maxZoom: 12, attribution: osmAttrib });
+    const osmAttrib = 'Map data © <a id="logo" href="http://openstreetmap.org">OpenStreetMap</a> contributors <a id="lg" href="https://github.com/dgordienko/a2tst.source">github</a>';
+    const osm = new L.TileLayer(osmUrl, { minZoom: 8, maxZoom: 20, attribution: osmAttrib });
     this.leafletMap.addLayer(osm);
     // not angular way!
     // this.nativeElement = this.render.selectRootElement('#logo');
     // const logo = this.nativeElement;
-    // jquery way
-    const t = $('#foo').prop('href');
-    console.log(t);
+
   }
 }

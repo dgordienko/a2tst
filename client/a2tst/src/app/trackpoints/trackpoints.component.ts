@@ -16,9 +16,9 @@ export class TrackpointsComponent implements OnInit {
   ];
   constructor(private srv: PointsService) {
     this.srv.getPointsData().then(data => {
-       this.tablerows = data;
-      //console.table(data);
-    });
+      this.tablerows = data;
+    })
+      .catch(ex => console.error(ex));
   }
   ngOnInit() {
 

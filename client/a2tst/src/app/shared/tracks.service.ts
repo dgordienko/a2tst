@@ -9,7 +9,7 @@ export class TracksService {
 
   constructor(private http: Http) { }
   getTrackData() {
-    const u = './assets/route.geojson';
+    const u = './assets/r.geojson';
     return Promise.resolve((this.http.get(u)
       .map((response: Response) => {
         const loadeddata: GeoJSON.FeatureCollection<any> = response.json();

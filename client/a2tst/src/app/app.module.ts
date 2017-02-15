@@ -4,7 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
-
+import { MaterialModule } from '@angular/material';
+import 'hammerjs';
 
 import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
@@ -23,7 +24,9 @@ import { TrackpointsComponent } from './trackpoints/trackpoints.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    NgxDatatableModule
+    NgxDatatableModule,
+    MaterialModule.forRoot(),
+
   ],
   providers: [TracksService, PointsService],
   bootstrap: [AppComponent]

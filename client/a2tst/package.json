@@ -18,24 +18,33 @@
     "@angular/core": "^2.3.1",
     "@angular/forms": "^2.3.1",
     "@angular/http": "^2.3.1",
+    "@angular/material": "^2.0.0-beta.1",
     "@angular/platform-browser": "^2.3.1",
     "@angular/platform-browser-dynamic": "^2.3.1",
     "@angular/router": "^3.3.1",
     "@asymmetrik/angular2-leaflet": "^1.2.0",
     "@swimlane/ngx-datatable": "^6.1.0",
     "@types/geojson": "^1.0.0",
+    "@types/jquery": "^2.0.40",
+    "@types/jquery.noty": "^2.4.0",
     "angular2.leaflet.components": "^1.3.0",
     "core-js": "^2.4.1",
+    "hammerjs": "^2.0.8",
+    "jquery": "^3.1.1",
     "leaflet": "^1.0.3",
+    "noty": "^2.4.0",
     "rxjs": "^5.0.1",
     "ts-helpers": "^1.1.1",
     "zone.js": "^0.7.2"
   },
   "devDependencies": {
     "@angular/compiler-cli": "^2.3.1",
+    "@types/hammerjs": "^2.0.34",
     "@types/jasmine": "2.5.38",
+    "@types/jquery": "^2.0.40",
     "@types/lodash": "^4.14.52",
     "@types/node": "^6.0.42",
+    "@types/toastr": "^2.1.32",
     "angular-cli": "1.0.0-beta.28.3",
     "codelyzer": "~2.0.0-beta.1",
     "jasmine-core": "2.5.2",
@@ -48,6 +57,7 @@
     "protractor": "~4.0.13",
     "ts-node": "1.2.1",
     "tslint": "^4.3.0",
-    "typescript": "~2.0.3"
+    "typescript": "~2.0.3",
+    "webpack": "^2.2.1"
   }
 }

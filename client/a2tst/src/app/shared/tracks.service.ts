@@ -13,14 +13,8 @@ export class TracksService {
     return Promise.resolve((this.http.get(u)
       .map((response: Response) => {
         const loadeddata: GeoJSON.FeatureCollection<any> = response.json();
-        const currentPath = loadeddata.features[0].geometry.coordinates;
-        const points: Array<L.LatLng> = [];
-        currentPath.forEach(x => {
-          const p = new L.LatLng(x[1], x[0], x[2]);
-          points.push(p);
-        });
-        return points;
+        return loadeddata;
       })).toPromise());
-  };
-  // tslint:disable-next-line:eofline
+  }
+// tslint:disable-next-line:eofline
 }

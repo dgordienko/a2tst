@@ -1,22 +1,3 @@
-      <ngx-datatable
-        class='material'
-        [rows]='rows'
-        [columnMode]="'standard'"
-        [headerHeight]="50"
-        [footerHeight]="50"
-        [rowHeight]="50"
-        [scrollbarV]="true"
-        (page)="onPage($event)">
-        <ngx-datatable-column name="Name" width="200">
-          <template let-value="value" ngx-datatable-cell-template>
-            <strong>{{value}}</strong>
-          </template>
-        </ngx-datatable-column>
-        <ngx-datatable-column name="Gender" width="300">
-          <template let-row="row" let-value="value" ngx-datatable-cell-template>
-            <i [innerHTML]="row['name']"></i> and <i>{{value}}</i>
-          </template>
-        </ngx-datatable-column>
-        <ngx-datatable-column name="Age" width="80">
-        </ngx-datatable-column>
-      </ngx-datatable>
+<ngx-datatable id="grid" class="material" [rows]="tablerows" [columns]="columns" [headerHeight]="50" [scrollbarV]="true"
+  [footerHeight]="50" [rowHeight]="50">
+  </ngx-datatable>
